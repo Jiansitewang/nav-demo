@@ -12,7 +12,6 @@
 	<header></header>
 	<main>
 			<div class="wrapper" id="Insert">
-
 			</div>
 	</main>
 	<footer></footer>
@@ -22,7 +21,7 @@
           '1': {0:'a',1:'s',2:'d',3:'f',4:'g',5:'h',6:'j',7:'k',8:'l',length:9},
           '2': {0:'z',1:'x',2:'c',3:'v',4:'b',5:'n',6:'m',length:7},
 					'length': 3
-			}
+			};
 			var hash = {
 			    'q': 'qq.com',
           'w': 'weibo.com',
@@ -38,39 +37,41 @@
           's': 'sohu.com',
           'z': 'zhihu.com',
           'm': 'www.mcdonalds.com.cn',
-			}
+			};
 			var hashInlocalStorage = JSON.parse(localStorage.getItem('zzz' || 'null'))
 			if(hashInlocalStorage){
 			    hash = hashInlocalStorage
 			}
 
-			index = 0
+			index = 0;
       while(index< keys['length']){
-          divxxx = document.createElement('div')
-          Insert.appendChild(divxxx)
-		      row = keys[index] //抽出第一个数组、第二个数组、第三个数组
+          divxxx = document.createElement('div');
+          divxxx.className = 'row'
+          Insert.appendChild(divxxx);
+		      row = keys[index]; //抽出第一个数组、第二个数组、第三个数组
 
-		      index2 = 0 //此循环在div中生成kbd并根据数据生成kbd中的内容
+		      index2 = 0;//此循环在div中生成kbd并根据数据生成kbd中的内容
 		      while(index2< row['length']){
-            kbdxxx = document.createElement('kbd')
-		        kbdxxx.textContent = row[index2]
-            buttonxxx = document.createElement('button')
+            kbdxxx = document.createElement('kbd');
+		        kbdxxx.textContent = row[index2];
+            kbdxxx.className = 'keycss';
+            buttonxxx = document.createElement('button');
             buttonxxx.textContent = '编辑';
             buttonxxx.onclick = function (KeyPressMonitor) {
-		            keyClick = KeyPressMonitor['target']['id']
-		            editedWebsite = prompt('请输入网址')
-		            hash[keyClick] = editedWebsite
+		            keyClick = KeyPressMonitor['target']['id'];
+		            editedWebsite = prompt('请输入网址');
+		            hash[keyClick] = editedWebsite;
 		            localStorage.setItem('zzz',JSON.stringify(hash))
-            }
-            kbdxxx.appendChild(buttonxxx)
-		        divxxx.appendChild(kbdxxx)
+            };
+            kbdxxx.appendChild(buttonxxx);
+		        divxxx.appendChild(kbdxxx);
             index2 = index2+1
 		      }
           index = index+1//此循环在wrapper的div中生成3个div
 			}
 			document.onkeypress = function (KeyPressMonitor) {
-					keyPressed = KeyPressMonitor['key']
-					website = hash[keyPressed]
+					keyPressed = KeyPressMonitor['key'];
+					website = hash[keyPressed];
 					window.open('http://'+website,'_blank')
       }
 	</script>
