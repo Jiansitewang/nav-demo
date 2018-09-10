@@ -1,19 +1,148 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
 }
 
-kbd {
-  border: 1px solid red;
-  width: 4em;
-  height: 4em;
-  display: inline-block;
-  text-transform: uppercase;
+body {
+  background: gray url(./nav-bg.png);
+}
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  height: 100vh;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4.5px 0;
+}
+
+
+.keyCss {
+  width: 71px;
+  height: 69px;
+  margin: 0 12px 0 0;
+  text-align: center;
+  /*padding: 0 12px;*/
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-family: keyboard, "Arial Rounded", Helvetica, Arial, sans-serif;
   position: relative;
+  text-transform: uppercase;
+}
+
+/*delete按键*/
+.wrapper > div:nth-child(1) > kbd:nth-child(14) {
+  width: 120px;
+  text-transform: lowercase;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 16px;
+}
+.wrapper > div:nth-child(1) > kbd:nth-child(14) span{
+  margin: 0 10px 10px 0;
+}
+.wrapper > div:nth-child(1) > kbd:nth-child(14) img{
+  width: 0;
+  height: 0;
+}
+
+
+/*tab 按键*/
+.wrapper > div:nth-child(2) > kbd:nth-child(1) {
+  width: 120px;
+  text-transform: lowercase;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-size: 16px;
+}
+.wrapper > div:nth-child(2) > kbd:nth-child(1) span{
+  margin: 0 0 10px 10px;
+}
+
+
+/*capslock按键*/
+.wrapper > div:nth-child(3) > kbd:nth-child(1) {
+  width: 138px;
+  text-transform: lowercase;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-size: 16px;
+}
+.wrapper > div:nth-child(3) > kbd:nth-child(1) span{
+  margin: 0 0 10px 10px;
+}
+
+/*enter按键*/
+.wrapper > div:nth-child(3) > kbd:nth-child(13) {
+  width: 138px;
+  text-transform: lowercase;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 16px;
+}
+.wrapper > div:nth-child(3) > kbd:nth-child(13) span{
+  margin: 0 10px 10px 0;
+}
+.wrapper > div:nth-child(3) > kbd:nth-child(13) img{
+  width: 0;
+  height: 0;
+}
+
+/*左shift按键*/
+.wrapper > div:nth-child(4) > kbd:nth-child(1){
+  width: 178px;
+  text-transform: lowercase;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-size: 16px;
+}
+.wrapper > div:nth-child(4) > kbd:nth-child(1) span{
+  margin: 0 0 10px 10px;
+}
+
+
+/*右shift按键*/
+.wrapper > div:nth-child(4) > kbd:nth-child(12) {
+  width: 178px;
+  text-transform: lowercase;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 16px;
+}
+.wrapper > div:nth-child(4) > kbd:nth-child(12) span{
+  margin: 0 10px 10px 0;
+}
+.wrapper > div:nth-child(4) > kbd:nth-child(12) img{
+  width: 0;
+  height: 0;
+}
+
+
+.keyCss img{
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
 }
 
 kbd > button {
@@ -25,67 +154,4 @@ kbd > button {
 
 kbd:hover > button {
   display: inline-block;
-}
-
-body {
-  background: gray url(./nav-bg.png);
-  /*background-size: cover;*/
-}
-
-main {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-/ / viewportHeight
-
-}
-
-#Insert {
-  display: inline-block;
-}
-
-#Insert > div:nth-child(2) {
-  margin-left: -22px;
-}
-#Insert > div:nth-child(2) > div:nth-child(1) {
-
-}
-#Insert > div:nth-child(3) {
-  /*margin-left: -80px;*/
-}
-
-.wrapper {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-}
-
-.keyCss {
-  width: 47px;
-  height: 69px;
-  padding: 0 12px;
-  background: linear-gradient(to bottom, #292929 0%, #111111 100%);
-  border: 1px solid #373737;
-  color: #c5c5c5;
-  border-radius: 6px;
-  box-shadow: 0 0 0 1px #1a1b1c, 0 0 0 2px #1f2020, 0 3px 0 2px #080808;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-family: Helvetica;
-
-}
-
-.row {
-  margin: 20px;
-}
-
-.row .keyCss {
-  margin: 0 10px;
-}
-.keyCss img{
-  width: 16px;
-  height: 16px;
 }
